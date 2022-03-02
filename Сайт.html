@@ -1,0 +1,678 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Сайт</title>
+	</head>
+    <style>
+	ul.menu li {
+		border-left: solid 1px #e0e0e0;
+		display: inline-block;
+		padding: 0 0 0 1em;
+		margin: 0 0 0 1em;
+	}
+
+		ul.menu li:first-child {
+			border-left: 0;
+			margin-left: 0;
+			padding-left: 0;
+		}
+		#back-to-top.show {
+			opacity: 1;
+			visibility: visible;
+			right: calc(2%);
+		}
+		#back-to-top {
+			position: fixed;
+			right: -60px;
+			bottom: 10px;
+			width: 50px;
+			height: 50px;
+			border-color: transparent;
+			border-radius: 50%;
+			background-color: #f5f5f5;
+		}
+		#back-to-top:hover,
+		#back-to-top:focus {
+			background-color: #efefef;
+			outline: none;
+		}
+		#back-to-top:before,
+		#back-to-top:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		#back-to-top:before {
+			width: 5px;
+			height: 25px;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+			background-color:#bbbbbb; 
+		}
+		#back-to-top:after {
+			width: 15px;
+			height: 15px;
+			transform: translate(-50%, -50%) rotate(45deg);
+			border-top: 5px solid #bbbbbb;
+			border-left: 5px solid #bbbbbb; 
+		}
+		.text-head {
+			text-indent: 20px;
+			color: #f2f2f2;
+			//font-size: 15px;
+			//padding: 8px 12px;
+			position: absolute;
+			top: 5%;
+			width: 100%;
+			height:100%;
+			//vertical-align: middle;
+			text-align: justify;
+			grid-area: header;
+			font-size: 30px;
+			color: #F5F5DC;
+		}
+		.fade {
+			-webkit-animation-name: fade;
+			-webkit-animation-duration: 1.5s;
+			animation-name: fade;
+			animation-duration: 1.5s;
+		}
+		@-webkit-keyframes fade {
+			from {opacity: .4}
+			to {opacity: 1}
+		}
+		@keyframes fade {
+			from {opacity: .4}
+			to {opacity: 1}
+		}
+		* {
+			box-sizing: border-box;
+		}
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+		.grid-container {
+			height: 100vh;
+			display: grid;
+			grid-template-areas:
+			'header header header'
+			'definition definition definition'
+			'. . .'
+			'. ULContent .'
+			'. DLContent .'
+			'. . .'
+			'. UCContent .'
+			'. DCContent .'
+			'. . .'
+			'. URContent .'
+			'. DRContent .'
+			'. . .'
+			'content3 content3 content3'
+			'd1 d1 d1'
+			'd2 d2 d2'
+			'footer1 footer1 footer1';
+			grid-template-columns: 5px 1fr 5px;
+			grid-template-rows: 1fr 1fr 5px 1fr 4fr 5px 1fr 4fr 5px 1fr 4fr 5px 1fr 1fr 1fr;#200px 70px 80px;
+		}
+		.header {
+			grid-area: header;
+			background-color:#FFFFFF;
+			text-aling:justify;
+		}
+		.img {
+			#display: block;
+			#border: 0;
+			width: auto;
+			height: 100%
+		}
+		.img1 {
+			display: block;
+			border: 0;
+			width: 100%;
+			height: auto;
+		}
+		.definition {
+			margin-bottom:10px;
+			grid-area: definition;
+			text-align: center;
+		}
+		.definition-text{
+			padding: 50px;
+			color: black; font-family: ‘Lato’, sans-serif; font-size: 20px; line-height: 28px; margin: 0 0 48px;
+			margin-bottom: -40px;
+		}
+		.content3 {
+			padding: 20px;
+			grid-area: content3;
+			color: black;
+		}
+		.conSidebar {
+			padding: 10px;
+			grid-area: conSidebar;
+			background-color: #FF6347;
+		}
+		.footer1 {
+			grid-area: footer1;
+			padding: 10px;
+			background-color: #333;
+			color:#FFFFFF;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			text-align: center;
+			font-family: "century gothic";
+		}
+		.d1 {
+			padding: 15px;
+			grid-area: d1;
+			color: #FFFFFF;
+			text-aling:justify;
+			background-image: url("images1/bg01.png");
+			background-color:rgba(0,0,0,.05);
+		}
+		.d2 {
+			padding: 15px;
+			grid-area: d2;
+			color: #FFFFFF;
+			text-aling:justify;
+			background-image: url("images1/bg01.png");
+			background-color:rgba(0,0,0,.05);
+		}
+		.ULContent {
+			grid-area: ULContent;
+					bg {
+		}
+		}
+		.DLContent {
+			padding: 15px;
+			text-align: justify;
+			grid-area: DLContent;
+			background-image: url("images1/bg01.png");
+			background-color:rgba(0,0,0,.05);
+		}
+		.UCContent {
+			grid-area: UCContent;
+		}
+		.DCContent {
+			text-align: justify;
+			padding: 15px;
+			grid-area: DCContent;
+			background-image: url("images1/bg01.png");
+			background-color:rgba(0,0,0,.05);
+		}
+		.URContent {
+			grid-area: URContent;
+		}
+		 .DRContent {
+			text-align: justify;
+			padding: 15px;
+			grid-area: DRContent;
+			background-image: url("images1/bg01.png");
+			background-color:rgba(0,0,0,.05);
+		}
+		h3 {
+			text-align:center;
+			font-family: ‘Lato’, sans-serif; font-size: 30px; font-weight: 500; line-height: 58px; margin: 0 0 10px;
+			padding-top: 20px;
+			margin-bottom: -50px;
+			color: #1faee9;
+			letter-spacing: 1px;
+			
+		}
+		h2 { 
+		font-family: ‘Lato’, sans-serif; font-size: 23px; font-weight: 500; line-height: 30px; margin: 0 0 10px;
+		text-align:center;
+		color: #1faee9;
+		padding-top: 5px;
+		margin-bottom: 10px;
+		}
+		h4 {
+		font-family: "century gothic"; font-size: 23px; font-weight: 500; line-height: 30px; margin: 0 0 10px;
+		text-align:center;
+		color: #1faee9;
+		margin-bottom: 10px;
+		padding-left: 10px;
+		padding-right: 10px;
+		}
+		
+		@media screen and (min-width: 782px) {
+			.grid-container {
+				height: 100vh;
+				display: grid;
+				grid-template-areas:
+				'header header header header header header header header header header'
+				'definition definition definition definition definition definition definition definition definition definition'
+				'. . . . . . . . . .'
+				'. ULContent ULContent . UCContent UCContent . URContent URContent .'
+				'. DLContent DLContent . DCContent DCContent . DRContent DRContent .'
+				'. . . . . . . . . .'
+				'content3 content3 content3 content3 content3 content3 content3 content3 content3 content3'
+				'd1 d1 d1  d1 d1 d2 d2 d2 d2 d2'
+				'footer1 footer1 footer1 footer1 footer1 footer1 footer1 footer1 footer1 footer1';
+				grid-template-columns:3fr 15fr 15fr 20px 15fr 15fr 20px 15fr 15fr 3fr;
+				grid-template-rows: 1fr 1fr 40px 1fr 4fr 40px 1fr 1fr 1fr;
+			}
+			.text-head {
+				color: #f2f2f2;
+				//font-size: 15px;
+				position: absolute;
+				top: 10%;
+				width: 100%;
+				height:100%;
+				//vertical-align: middle;
+				text-align: center;
+				grid-area: header;
+				font-size: 40px;
+				color: #F5F5DC;
+			}
+			h3 {
+				font-size:30px;
+				text-align:center;
+				font-family: "century gothic"; font-weight: 300; line-height: 58px; margin: 0 0 10px;
+				padding-top: 20px;
+				margin-bottom: -50px;
+				color: #1faee9;
+				letter-spacing: 1px;
+			}
+			.definition {
+				margin-bottom: 10px;
+				font-size:15px;
+				grid-area: definition;
+				font-size:20px;
+				text-align: justify;
+				
+			}
+			.definition-text{
+				padding: 50px;
+				color: black; font-family: ‘Lato’, sans-serif; font-size: 20px; line-height: 28px; margin: 0 0 48px;;
+				margin-bottom: -40px;
+			}
+			.content3 {
+				padding: 20px;
+				text-align: justify;
+				grid-area: content3;
+				color: black;
+			}
+			.conSidebar {
+				padding: 10px;
+				grid-area: conSidebar;
+				background-color: #FF6347;
+				font-size:20px;
+			}
+			.d1 {
+				padding: 20px;
+				grid-area: d1;
+				color: #FFFFFF;
+				text-align: justify;
+				text-indent: 20px;
+				background-image: url("images1/bg01.png");
+			background-color:rgba(0,0,0,.05);
+				font-size:20px;
+			}
+			.d2 {
+				padding: 20px;
+				grid-area: d2;
+				color: #FFFFFF;
+				text-align: justify;
+				text-indent: 20px;
+				background-image: url("images1/bg01.png");
+			background-color:rgba(0,0,0,.05);
+				font-size:20px;
+			}
+			.DLContent {
+				padding: 20px;
+				text-align: justify;
+				grid-area: DLContent;
+				background-image: url("images1/bg01.png");
+				text-indent: 20px;
+				font-size:20px;
+				background-color:rgba(0,0,0,.05);
+			}
+			.DCContent {
+				text-align: justify;
+				padding: 20px;
+				grid-area: DCContent;
+				background-image: url("images1/bg01.png");
+				font-size:20px;
+				background-color:rgba(0,0,0,.05);
+			}
+			.DRContent {
+				text-align: justify;
+				padding: 20px;
+				grid-area: DRContent;
+				background-image: url("images1/bg01.png");
+				font-size:20px;
+				background-color:rgba(0,0,0,.05);
+			}
+		}
+		p {
+			text-indent: 50px;
+			padding: 20px;
+			margin-bottom: 10px;
+			color: black;
+			font-size: 20px;
+			line-height: 1.3;
+		}
+	#header {
+		text-align: center;
+		padding: 3em 0 0 0;
+		background-color: #fff;
+		background-image: url("images1/bg02.png"), url("images1/bg02.png"), url("images1/bg01.png");
+		background-position: top left,					top left,					top left;
+		background-size: 100% 6em, 100% 6em, auto;
+		background-repeat: no-repeat,					no-repeat,					repeat;
+	}
+
+		#header h1 {
+			padding: 0 0 1.75em 0;
+			margin: 0;
+		}
+
+			#header h1 a {
+				font-size: 1em;
+				letter-spacing: -0.025em;
+				border: 0;
+			}
+
+	#nav {
+		cursor: default;
+		background-color: #333;
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images1/bg01.png");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images1/bg01.png");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images1/bg01.png");
+		background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3)), url("images1/bg01.png");
+		padding: 0;
+	}
+
+		#nav:after {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 0.75em;
+			background-color: #37c0fb;
+			background-image: url("images1/bg01.png");
+		}
+
+		#nav > ul {
+			margin: 0;
+		}
+
+			#nav > ul > li {
+				position: relative;
+				display: inline-block;
+				margin-left: 1em;
+			}
+
+				#nav > ul > li a {
+					color: #c0c0c0;
+					text-decoration: none;
+					border: 0;
+					display: block;
+					padding: 1.5em 0.5em 1.35em 0.5em;
+				}
+
+				#nav > ul > li:first-child {
+					margin-left: 0;
+				}
+
+				#nav > ul > li:hover a {
+					color: #fff;
+				}
+
+				#nav > ul > li.current {
+					font-weight: 600;
+				}
+
+					#nav > ul > li.current:before {
+						-moz-transform: rotateZ(45deg);
+						-webkit-transform: rotateZ(45deg);
+						-ms-transform: rotateZ(45deg);
+						transform: rotateZ(45deg);
+						width: 0.75em;
+						height: 0.75em;
+						content: '';
+						display: block;
+						position: absolute;
+						bottom: -0.5em;
+						left: 50%;
+						margin-left: -0.375em;
+						background-color: #37c0fb;
+						background-image: url("images1/bg01.png");
+					}
+
+					#nav > ul > li.current a {
+						color: #fff;
+					}
+
+				#nav > ul > li.active a {
+					color: #fff;
+				}
+
+				#nav > ul > li.active.current:before {
+					opacity: 0;
+				}
+
+				#nav > ul > li > ul {
+					display: none;
+				}
+				em, a {
+				margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+		font-family: "century gothic";
+		}
+		
+		h1 a {
+		color: inherit;
+			text-decoration: none;
+			}
+			h1 em {
+			font-style: normal;
+			font-weight: 300;
+		}
+		i {
+		font-size: 20px;
+		color: black;
+		}
+		ul, li {
+		font-size: 17px;
+		line-height: 25px;
+		padding-right: 10px;
+		color: #37c0fb;
+		}
+		li span {
+		color: black;
+		}
+		h5 {
+		color:#333;
+		font-family: "century gothic"; font-size: 30px; font-weight: 500; line-height: 30px; margin: 0 0 10px;
+		text-align:center;
+		padding: 30px;
+		}
+		a {
+		color: #37c0fb;
+		}
+		
+		
+    </style>
+	<body>
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+						<h1><a>Multiexperience: <em>новый подход к цифровой трансформации</em></a></h1>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li class="current"><a href="сайт.html">Главная</a></li>
+								<li><a href="#">Новости</a></li>
+								<li><a href="#">Фото</a></li>
+								<li><a href="#">Ресурсы</a></li>
+								<li><a href="#">О нас</a></li>
+								<li><a href="#">Связаться с нами</a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+		
+			<div class="header">
+				<div class="mySlides fade">
+					<img src="1.jpg" style="width:100%">
+				</div>
+				<div class="mySlides fade">
+					<img src="2.jpg" style="width:100%">
+				</div>
+				<div class="mySlides fade">
+					<img src="3.jpg" style="width:100%">
+				</div>
+		<div class="grid-container">
+				
+			<div class="definition">
+				<h3>Multiexperience</h3>
+				<div class=definition-text>
+					<p>Multiexperience (мультиопыт) - это использование различных модальностей, цифровых точек соприкосновения, 
+					приложений и устройств для проектирования и разработки удобного интерфейса для клиентов. Идея состоит в том, чтобы 
+					взаимодействовать с клиентами в максимально возможном количестве точек соприкосновения, чтобы обеспечить единообразие 
+					взаимодействия с клиентами в Интернете, на мобильных устройствах, в приложениях и в других условиях.</p>
+				</div>
+			</div>
+			<div class="ULContent">
+				<img src="77.jpg"class="img1" alt="">
+			</div>
+			<div class="DLContent">
+				<h2>Рост объемов данных</h2>
+				<p> К 2023 году более 25% мобильных приложений, прогрессивных веб-приложений и разговорных приложений на крупных предприятиях 
+				будут построены и / или запущены через многоэкспериментальность платформа разработки. Технология Multiexperience-это шаг вперед 
+				на пути полной цифровой трансформации.  </p>
+			</div>
+			<div class="UCContent">
+				<img src="99.png"class="img1" alt="">
+			</div>
+			<div class="DCContent">
+				<h2>Четырехэтапная модель</h2> 
+				<p> Для предприятий, пытающихся применить мультиопытность к цифровому путешествию пользователя, 
+				вице-президент Gartner Research Джейсон Вонг рекомендует четырехступенчатую модель, включающую использование информации 
+				о клиентах, понимание потребностей пользователей и использование прогнозной аналитики для выработки обоснованных рекомендаций 
+				и внесения изменений. </p>
+			</div>
+			<div class="URContent">
+				<img src="88.jpg"class="img1" alt="">
+			</div>
+			<div class="DRContent"><h2>Большая пропускная способность</h2> 
+				<p>Потребность в мультиэкспериментальных платформах будет только возрастать по мере увеличения количества приложений, 
+				устройств и режимов взаимодействия. Поскольку клиенты владеют устройствами с новыми способами взаимодействия, спрос на 
+				такие услуги возрастает. </p>
+			</div>
+			<div class="content3">
+				<h4>Визуальные и сенсорные интерфейсы уже достаточно устоялись и необходимы для большинства приложений B2C. 
+				Те, что приведены ниже, являются более новыми платформами:</h4>
+				<UL>
+					<LI><i>Чат-боты (Conversational UI)</i><span>: программное обеспечение, которое позволяет людям получать информацию от машин естественным, разговорным способом, 
+используя текст и голос. </span></li>
+					<LI><i>Дополненная реальность</i><span>: AR-устройства улучшают представление о реальной среде с помощью компьютерных данных. </span></li>
+					<LI><i>Виртуальная реальность</i><span>: VR-это имитируемая визуальная среда, которая генерируется компьютерными технологиями. В этой реальности человек может 
+взаимодействовать с объектами и выполнять последовательность действий. </span></li>
+<LI><i>Носимые устройства</i><span>: носимые устройства-это умные электронные устройства, построенные для ношения на теле пользователя, где они могут взаимодействовать с 
+приложением смартфона. Включает в себя bluetooth-гарнитуры и умные часы.</span></li>
+				</UL>
+			</div>
+			<div class="footer1">
+							<ul class="menu">
+								<li>&copy; Multiexperience. All rights reserved</li><li>Design: <a href="http://www.madi.ru/">MADI</a></li>
+							</ul>
+			</div>
+			<div class="d1">
+				<h5>Применение</h5>
+				<UL TYPE="disc">
+					<p>В качестве отличного примера разнообразного опыта нам действительно не нужно искать дальше банковского сектора. 
+					Индустрия традиционно была единственным бизнесом, но с появлением Интернета организации были вынуждены открывать онлайн-банкинг и 
+					услуги по управлению счетами. </p>
+<p>Сегодня почти все банки внедрили мобильные приложения и улучшили цифровую связь. Они, безусловно, являются многоканальными в 
+самом строгом смысле слова.
+А как насчет того, чтобы пользователи обновляли свои банковские операции с помощью голосовой команды? Это всего лишь один пример того,
+ как развивается финансовый сектор, и где все большее значение приобретает мультиопыт.</p>
+				</p></UL>
+			</div>
+			<div class="d2">
+				<h5>Другой вариант применения</h5>
+				<p>Вы когда-нибудь просматривали сайт интернет-магазинов и задавались вопросом, подойдет ли стул, на который вы смотрите,
+				вашему декору? Вы выбираете изображение стула, чтобы рассмотреть его поближе, и вуаля! Теперь вы можете визуализировать трехмерное 
+				изображение стула на фоне вашего дома на своем экране. Это связано с тем, что включена дополненная реальность (AR) для
+				улучшения взаимодействия с пользователем.</p> 
+			</div>
+			
+		</div>
+		<a href="#" id="back-to-top"></a>
+		<script>
+			var slideIndex = 0;
+			showSlides();
+
+			function showSlides() {
+				var i;
+				var slides = document.getElementsByClassName("mySlides");
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				slideIndex++;
+				if (slideIndex > slides.length) {slideIndex = 1}
+				slides[slideIndex-1].style.display = "block";
+				setTimeout(showSlides, 5000);
+			}
+		</script>
+		<script>
+function scrollTo(to, duration = 700) {
+    const
+        element = document.scrollingElement || document.documentElement,
+        start = element.scrollTop,
+        change = to - start,
+        startDate = +new Date(),
+        // t = current time
+        // b = start value
+        // c = change in value
+        // d = duration
+        easeInOutQuad = function (t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        },
+        animateScroll = function () {
+            const currentDate = +new Date();
+            const currentTime = currentDate - startDate;
+            element.scrollTop = parseInt(easeInOutQuad(currentTime, start, change, duration));
+            if (currentTime < duration) {
+                requestAnimationFrame(animateScroll);
+            }
+            else {
+                element.scrollTop = to;
+            }
+        };
+    animateScroll();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    let btn = document.querySelector('#back-to-top');
+    window.addEventListener('scroll', function () {
+        if (pageYOffset > 100) {
+            btn.classList.add('show');
+        } else {
+            btn.classList.remove('show');
+        }
+    });
+
+    btn.onclick = function (click) {
+        click.preventDefault();
+        scrollTo(0, 400);
+    }
+});
+		</script>
+	</body>
+</html>
